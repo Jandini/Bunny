@@ -4,6 +4,10 @@
       "commandName": "Project",
       "commandLineArgs": "send -t Hello"
     },
+    "Receive": {
+      "commandName": "Project",
+      "commandLineArgs": "receive"
+    },
     "Help": {
       "commandName": "Project",
       "commandLineArgs": "--help"
