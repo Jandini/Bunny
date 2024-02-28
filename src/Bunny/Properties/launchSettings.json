@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "Run": {
+    "Send": {
       "commandName": "Project",
-      "commandLineArgs": "--path ."
+      "commandLineArgs": "send -t Hello"
     },
     "Help": {
       "commandName": "Project",

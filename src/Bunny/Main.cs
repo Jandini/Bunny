@@ -11,9 +11,16 @@ internal class Main
         _logger = logger;
         _config = config;
     }
-    public void Run(string path)
+    public void Send(string text)
     {
-        var dir = new DirectoryInfo(path);
-        _logger.LogInformation(_config.Bind<Settings>("Bunny").Message, dir.Name, dir.GetFiles().Length);
+        var message = _config.Bind<Settings>("Bunny").Message;
+
+        _logger.LogInformation(message, text);
     }
+
+    public void Receive()
+    {
+
+    }
+
 }

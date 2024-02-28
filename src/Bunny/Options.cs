@@ -2,10 +2,17 @@
 
 class Options
 {
-    [Verb("run", isDefault: true, HelpText = "Run program.")]
-    internal class Run
+
+    [Verb("send", isDefault: false, HelpText = "Send text message.")]
+    internal class Send
     {
-        [Option('p', "path", HelpText = "Directory path.", Required = true)]
-        public string Path { get; set; }
+        [Option('t', "text", HelpText = "Text message.", Required = false)]
+        public string Text { get; set; }
+    }
+
+    [Verb("receive", isDefault: false, HelpText = "Receive text message.")]
+    internal class Receive
+    {
+    
     }
 }

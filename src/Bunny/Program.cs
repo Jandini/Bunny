@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using CommandLine;
 
-Parser.Default.ParseArguments<Options.Run>(args).WithParsed((parameters) =>
+Parser.Default.ParseArguments<Options.Send, Options.Receive>(args).WithParsed((parameters) =>
 {
     var config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
@@ -25,8 +25,12 @@ Parser.Default.ParseArguments<Options.Run>(args).WithParsed((parameters) =>
 
         switch (parameters)
         {
-            case Options.Run options:
-                main.Run(options.Path);
+            case Options.Send send:
+                main.Send(send.Text);
+                break;
+
+            case Options.Receive receive:
+                main.Receive();
                 break;
         };
     }
